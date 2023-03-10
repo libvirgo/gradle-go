@@ -1,0 +1,15 @@
+Name: order_api-api
+Host: 0.0.0.0
+Port: 2001
+ItemRpcConf:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: itemrpc.rpc
+  NonBlock: true
+OrderRpcConf:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: orderrpc.rpc
+  NonBlock: true

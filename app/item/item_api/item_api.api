@@ -1,0 +1,19 @@
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+type LoginRequest {
+	Name     string `json:"name"`
+	Password string `json:"password"`
+}
+
+service item_api-api {
+	@handler Item_apiHandler
+	get /from/:name(Request) returns (Response)
+	@handler Login
+	post /login (LoginRequest) returns (Response)
+}

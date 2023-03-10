@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package item_rpc;
+option go_package="./item_rpc";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+message LoginRequest {
+  string name = 1;
+  string password = 2;
+}
+message RegisterRequest {
+
+}
+
+service Item_rpc {
+  rpc Ping(Request) returns(Response);
+  rpc Login(LoginRequest) returns(Response);
+  rpc Register(RegisterRequest) returns(Response);
+}

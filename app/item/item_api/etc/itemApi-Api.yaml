@@ -1,0 +1,9 @@
+Name: item_api-api
+Host: 0.0.0.0
+Port: 2000
+ItemRpcConf:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: itemrpc.rpc
+  NonBlock: true

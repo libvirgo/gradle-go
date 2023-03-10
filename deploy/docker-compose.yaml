@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  etcd:
+    image: pachyderm/etcd:v3.5.5
+    environment:
+      - "ETCD_NAME=etcd"
+      - "ETCD_INITIAL_ADVERTISE_PEER_URLS=http://0.0.0.0:2380"
+      - "ETCD_INITIAL_CLUSTER=etcd=http://0.0.0.0:2380"
+      - "ETCD_INITIAL_CLUSTER_STATE=new"
+      - "ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380"
+      - "ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379"
+      - "ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379"
+      - "ALLOW_NONE_AUTHENTICATION=yes"
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+    restart: always
