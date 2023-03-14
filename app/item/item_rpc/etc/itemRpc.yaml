@@ -2,5 +2,5 @@ Name: itemrpc.rpc
 ListenOn: 0.0.0.0:3000
 Etcd:
   Hosts:
-  - 127.0.0.1:2379
+  - etcd:2379
   Key: itemrpc.rpc

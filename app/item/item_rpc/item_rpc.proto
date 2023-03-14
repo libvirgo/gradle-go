@@ -16,7 +16,6 @@ message LoginRequest {
   string password = 2;
 }
 message RegisterRequest {
-
 }
 
 service Item_rpc {

@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-
 	"micro/app/item/item_rpc/internal/config"
 	"micro/app/item/item_rpc/internal/server"
 	"micro/app/item/item_rpc/internal/svc"
@@ -24,7 +23,6 @@ func main() {
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 	ctx := svc.NewServiceContext(c)
-
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
 		item_rpc.RegisterItemRpcServer(grpcServer, server.NewItemRpcServer(ctx))
 
